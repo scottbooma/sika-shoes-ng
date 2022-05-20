@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductListingService } from '../product-listing.service';
@@ -13,6 +14,8 @@ export class ProductsPageComponent implements OnInit {
   constructor(private productListing: ProductListingService) {}
 
   ngOnInit() {
-    this.products = this.productListing.productList;
+    this.productListing.getProducts().subscribe((response) => {
+      this.products = response.products;
+    });
   }
 }
