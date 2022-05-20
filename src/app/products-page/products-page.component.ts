@@ -1,15 +1,18 @@
-import {Component, OnInit} from "@angular/core";
-import {Product} from "../product.model"
+import { Component, OnInit } from '@angular/core';
+import { Product } from '../product.model';
+import { ProductListingService } from '../product-listing.service';
 
 @Component({
-  selector: "app-products-page",
-  templateUrl: "./products-page.component.html",
-  styleUrls: ["./products-page.component.css"]
+  selector: 'app-products-page',
+  templateUrl: './products-page.component.html',
+  styleUrls: ['./products-page.component.css'],
 })
 export class ProductsPageComponent implements OnInit {
-  products: Product[] = []
-  error = false
+  products: Product[] = [];
+  error = false;
+  constructor(private productListing: ProductListingService) {}
+
   ngOnInit() {
-    // Get products here
+    this.products = this.productListing.productList;
   }
 }
