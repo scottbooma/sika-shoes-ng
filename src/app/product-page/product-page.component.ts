@@ -18,10 +18,10 @@ export class ProductPageComponent {
   ) {}
 
   ngOnInit() {
-    this.productListing.getProducts().subscribe((response) => {
+    this.productListing.getProducts().subscribe((productResponse) => {
       this.product = this.productListing.getProduct(
         +this.route.snapshot.params['id'],
-        response.products
+        productResponse.products
       );
     });
   }

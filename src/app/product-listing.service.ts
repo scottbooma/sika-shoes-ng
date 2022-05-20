@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from './product.model';
 
-type Response = {
+type ProductResponse = {
   products: [];
 };
 @Injectable({
@@ -15,6 +15,6 @@ export class ProductListingService {
   constructor(private http: HttpClient) {}
 
   getProducts() {
-    return this.http.get<Response>('../assets/products.json');
+    return this.http.get<ProductResponse>('../assets/products.json');
   }
 }

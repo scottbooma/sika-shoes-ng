@@ -13,8 +13,8 @@ export class ProductsPageComponent implements OnInit {
   constructor(private productListing: ProductListingService) {}
 
   ngOnInit() {
-    this.productListing.getProducts().subscribe((response) => {
-      this.products = response.products;
+    this.productListing.getProducts().subscribe((productResponse) => {
+      this.products = productResponse.products;
     });
   }
 }
