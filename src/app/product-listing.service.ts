@@ -25,5 +25,9 @@ export class ProductListingService {
       description: 'Did you know you can put these in the washing machine?',
     },
   ];
+
+  getProduct(id: number) {
+    return this.productList.find((product) => product.id == id);
+  }
   constructor() {}
 }
