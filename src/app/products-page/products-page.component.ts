@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductListingService } from '../product-listing.service';

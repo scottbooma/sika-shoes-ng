@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from './product.model';
 
+type Response = {
+  products: [];
+};
 @Injectable({
   providedIn: 'root',
 })
@@ -12,6 +15,6 @@ export class ProductListingService {
   constructor(private http: HttpClient) {}
 
   getProducts() {
-    return this.http.get('../assets/products.json');
+    return this.http.get<Response>('../assets/products.json');
   }
 }

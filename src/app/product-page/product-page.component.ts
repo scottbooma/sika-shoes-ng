@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductListingService } from '../product-listing.service';
@@ -19,9 +18,6 @@ export class ProductPageComponent {
   ) {}
 
   ngOnInit() {
-    // this.product = this.productListing.getProduct(
-    //   +this.route.snapshot.params['id']
-    // );
     this.productListing.getProducts().subscribe((response) => {
       this.product = this.productListing.getProduct(
         +this.route.snapshot.params['id'],
